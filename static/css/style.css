@@ -1,0 +1,246 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #000;
+}
+.logo{
+	background: #000;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.graficlogo{
+	padding: 5px;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+.button a{
+  display: inline-block;
+  background: #2196f3;
+  color: #fff;
+  padding: 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: Tahoma;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 100;
+}
+div.button {
+  position: fixed;
+  margin: 1%;
+  right: 30px;
+}
+.button_money a{
+  display: inline-block;
+  background: #2196f3;
+  color: #fff;
+  padding: 12px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: Tahoma;
+  font-size: 20px;
+  line-height: 0.8;
+  font-weight: 100;
+}
+div.button_money {
+  position: absolute;
+  margin: 0.3%;
+  left: 180px;
+}
+.button_logout a{
+  display: inline-block;
+  color: #fff;
+  padding: 12px;
+  border-radius: 3px;
+  font-family: Tahoma;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 100;
+}
+div.button_logout {
+  position: absolute;
+  margin: 1%;
+  right: 30px;
+}
+.form-contact label {
+         display: inline-block;
+         min-width: 80px;
+         color: #fff;
+}
+
+.form-contact p {margin: 10px 0 10px 0;}
+.form-contact input[type=submit], textarea {
+         font-size: 16px;
+}
+
+.flash {padding: 10px;}
+.flash.success {
+         border: 1px solid #21DB56;
+         background: #AEFFC5;
+}
+.flash.error {
+         border: 1px solid #FF4343;
+         background: #FF9C9C;
+}
+div.list-money {
+    display:inline-block;
+    float:left;
+    max-width: 50%;
+}
+div.list-money div.item {
+    display:inline-block;
+    width: 200px;
+    margin: 20px 10px 0 10px;
+    border: 1px solid #364c5e;
+    color: #fff;
+    border-radius: 5px;
+}
+.money_photo{
+	padding: 10px;
+	height: 100px;
+	width: 100px;
+	box-sizing: border-box;
+}
+div.list-money .photo {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+div.list-money .name {
+         display: flex;
+         border-radius: 3px 3px 0 0;
+         width:190px;
+         height:45px;
+         margin: 0;
+         padding: 10px 5px 10px 5px;
+         font-family: Tahoma;
+         background: #2196f3;
+         align-items:center;
+         justify-content: center;
+}
+div.list-money .moneylist {
+         display:flex;
+         margin: 10px;
+         align-items:center;
+         justify-content: center;
+}
+div.list-money .delete {
+         margin: 0;
+         border-radius: 0 0 3px 3px;
+         padding: 10px 5px 10px 5px;
+         font-family: Tahoma;
+         background: #2196f3;
+         display:flex;
+         align-items:center;
+         justify-content: center;
+}
+div.list-money .name a{
+         color: #fff;
+         text-decoration: none;
+}
+div.list-money .delete a{
+         color: red;
+         text-decoration: none;
+}
+.search input {
+  position: absolute;
+  width: 10%;
+  height: 28px;
+  padding-left: 10px;
+  border: 2px solid #7BA7AB;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  background: #F9F0DA;
+  color: #9E9C9C;
+  right: 100px;
+}
+.search button {
+  position: absolute;
+  top: 11;
+  right: 58px;
+  width: 42px;
+  height: 28px;
+  border: none;
+  background: #7BA7AB;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.search button:before {
+  content: "\1F50D";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
+}
+.selection input {
+  position: absolute;
+  width: 10%;
+  height: 28px;
+  padding-left: 10px;
+  border: 2px solid #7BA7AB;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  background: #F9F0DA;
+  color: #9E9C9C;
+  right: 100px;
+  top: 180px;
+}
+.selection button {
+  position: absolute;
+  top: 11;
+  right: 58px;
+  width: 42px;
+  height: 28px;
+  border: none;
+  background: #7BA7AB;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  top: 180px;
+}
+.selection button:before {
+  content: "\1F50D";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
+}
+.menu_logout li ul{
+     position: absolute;
+     top: 40px;
+     visibility: hidden;
+     background-color: black;
+     transition: 400ms;
+}
+.menu_logout li:hover ul{
+     visibility: visible;
+     top: 25px;
+     opacity: 1;
+}
+.filter_money {
+    position: absolute;
+    top: 21%;
+    right: 100px;
+}
+.scrolling_country {
+  display: none;
+}
+.scrolling_country a{
+  color: black;
+  text-decoration: none;
+}
+input:checked + .scrolling_country {
+    display: block;
+    position: absolute;
+    top: 55%;
+    width: 48%;
+    height:150px;
+    background: #fff;
+    border: 1px solid #C1C1C1;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+.nav-trigger {
+    top: 45%;
+    left: 185px;
+    position: absolute;
+    background: #fff;
+}
