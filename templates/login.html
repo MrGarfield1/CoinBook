@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Money</title>
+	<link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <header>
+    	<div class="logo">
+    		<a href="/"><img class="graficlogo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo"/></a>
+    	</div>
+    </header>
+    <main>
+		<form action="/login" method="post" class="form-contact">
+			<p><label>Email: </label> <input type="text" name="email" value="" requied />
+			<p><label>Пароль: </label> <input type="text" name="password" value="" requied />
+			<p><input type="submit" value="Вход" />
+		</form>
+		{% for cat, msg in get_flashed_messages(True) %}
+			<div class="flash {{cat}}">{{msg}}</div>
+		{% endfor %}
+    </main>
+</body>
+</html>
