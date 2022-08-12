@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Money</title>
+	<link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <header>
+    	<div class="logo">
+    		<a href="/profile/{{user_name}}"><img class="graficlogo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo"/></a>
+			<div class="button_logout">
+				<nav class="menu_logout">
+					<li><a href="#">{{user_name}}</a>
+						<ul>
+							<li><a href="/logout">Выйти</a></li>
+						</ul>
+					</li>
+				</nav>
+			</div>
+    	</div>
+    </header>
+    <main>
+		<hr>
+		{% for cat, msg in get_flashed_messages(True) %}
+			<div class="flash {{cat}}">{{msg}}</div>
+		{% endfor %}
+		<form action="/post/{{id_money}}/update" method="post" class="form-contact" enctype="multipart/form-data">
+			<p><label>Название: </label> <input type="text" name="name" value="{{name}}" />
+			<p><label>Страна: </label> <input type="text" name="country" value="{{country}}" />
+			<p><label>Год: </label> <input type="text" name="year" value="{{year}}" />
+			<p><label>Тираж: </label> <input type="text" name="circulation" value="{{circulation}}" />
+			<p><label>Материал: </label> <input type="text" name="material" value="{{material}}" />
+			<p><label>Диаметр: </label> <input type="text" name="diameter" value="{{diameter}}" />
+			<p><label>Цена: </label> <input type="text" name="price" value="{{price}}" />
+			<p><label>Описание: </label>
+			<p><textarea name="post" rows=7 cols=40>{{post}}</textarea>
+			<p><input type="file" name=img value="" />
+			<p><input type="submit" value="Записать" />
+		</form>
+    </main>
+</body>
+</html>

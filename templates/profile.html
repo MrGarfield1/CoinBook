@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Money</title>
+	<link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <header>
+    	<div class="logo">
+    		<a href="/profile/{{name}}"><img class="graficlogo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo"/></a>
+			<div class="button_logout">
+				<nav class="menu_logout">
+					<li><a href="#">{{name}}</a>
+						<ul>
+							<li><a href="/logout">Выйти</a></li>
+						</ul>
+					</li>
+				</nav>
+			</div>
+    	</div>
+		{% for cat, msg in get_flashed_messages(True) %}
+			<div class="flash {{cat}}">{{msg}}</div>
+		{% endfor %}
+    </header>
+    <main>
+		<hr>
+			<div class="filter_money">
+				<form method="post">
+					<p style="color:#fff;"><input type="number" placeholder="Год от" name="year_before" value="{{year_before}}" /> - <input type="number" placeholder="Год до" name="year_after" value="{{year_after}}" />
+					<p style="color:#fff;"><input type="number" placeholder="Цена от" name="price_before" value="{{price_before}}" /> - <input type="number" placeholder="Цена до" name="price_after" value="{{price_after}}" />
+					<p><input type="text" placeholder="Страна" name="country" value="{{country_money}}" />
+					<p><input type="text" placeholder="Номинал" name="nominal" value="{{nominal}}" />
+			  		<p><input type="submit" value="Найти" />
+			  	</form>
+				<input type="checkbox" class="nav-trigger">
+				<div class="scrolling_country">
+					{% for m in country %}
+					<p><a href="{{ url_for('profile', username=m[0])}}">{{m[0]}}</a></p>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="button_money">
+				<a href="/profile/newmoney">&#43;</a>
+			</div>
+			<h2 style="color:#fff; padding: 0 0 0 15px;"> Список монет</h2>
+			<div class="list-money">
+				{% for p in money %}
+				<div class="item">
+					<p class="name"><a href="{{ url_for('showDescription', id_money=p[0])}}">{{p[2]}}, {{p[1]}}, {{p[3]}} г.</a></p>
+					<p class="photo"><img class="money_photo" src="{{ url_for('static', filename=p[8]) }}"/>
+					<p class="moneylist">Тираж: {{p[4]}}</p>
+					<p class="moneylist">Материал: {{p[5]}}</p>
+					<p class="moneylist">Диаметр: {{p[6]}} мм.</p>
+					<p class="moneylist">Цена: {{p[7]}} руб.</p>
+					<p class="delete"><a href="{{ url_for('delete', id_money=p[0])}}" onclick="return confirm('Вы уверены, что хотите удалить запись?');">&#10006;</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="{{ url_for('update', id_money=p[0])}}">&#9998;</a></p>
+				</div>
+				{% endfor %}
+			</div>
+    </main>
+</body>
+</html>

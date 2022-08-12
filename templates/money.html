@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Money</title>
+	<link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <header>
+    	<div class="logo">
+    		<a href="/profile/{{name}}"><img class="graficlogo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo"/></a>
+			<div class="button_logout">
+				<nav class="menu_logout">
+					<li><a href="#">{{name}}</a>
+						<ul>
+							<li><a href="/logout">Выйти</a></li>
+						</ul>
+					</li>
+				</nav>
+			</div>
+    	</div>
+    </header>
+    <main>
+		<hr>
+			<a style="color:#fff"> {{ money }}</a>
+    </main>
+</body>
+</html>
